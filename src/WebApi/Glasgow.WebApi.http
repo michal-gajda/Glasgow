@@ -1,0 +1,6 @@
+@Glasgow.WebApi_HostAddress = http://localhost:5194
+
+GET {{Glasgow.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

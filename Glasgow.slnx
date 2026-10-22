@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Abstractions/">
+    <Project Path="src/Abstractions/Glasgow.Abstractions.csproj" />
+  </Folder>
+  <Folder Name="/src/AppHost/">
+    <Project Path="src/AppHost/Glasgow.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/src/AppServer/">
+    <Project Path="src/AppServer/Glasgow.AppServer.csproj" />
+  </Folder>
+  <Folder Name="/src/Services/">
+    <Project Path="src/Services/Glasgow.Services.csproj" />
+  </Folder>
+  <Folder Name="/src/WebApi/">
+    <Project Path="src/WebApi/Glasgow.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/src/WebUI/">
+    <Project Path="src/WebUI/Glasgow.WebUI.csproj" />
+  </Folder>
+</Solution>
