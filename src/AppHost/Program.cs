@@ -11,10 +11,11 @@ public sealed class Program
         var builder = DistributedApplication.CreateBuilder(args);
 
         var silo = builder.AddProject<Projects.Glasgow_AppServer>("silo")
-            .WithHealthCheck("/healthz")
+            .WithHttpHealthCheck("/healthz")
             ;
         
         builder.AddProject<Projects.Glasgow_WebApi>("api")
+            .WithHttpHealthCheck("/healthz")
             .WithReference(silo)
             ;
 

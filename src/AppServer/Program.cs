@@ -22,6 +22,7 @@ public sealed class Program
         });
 
         builder.Services.AddHealthChecks();
+        builder.Services.AddSingleton(TimeProvider.System);
 
         var app = builder.Build();
 

@@ -1,6 +1,6 @@
 ﻿namespace Glasgow.Services;
 
-public sealed class WeatherForecastService : IWeatherForecastService
+public sealed class WeatherForecastService(TimeProvider timeProvider) : Grain, IWeatherForecastService
 {
     private static readonly string[] Summaries =
     [
@@ -18,9 +18,10 @@ public sealed class WeatherForecastService : IWeatherForecastService
 
     public Task<IEnumerable<WeatherForecast>> GetWeatherForecastAsync()
     {
+        var dateTime = timeProvider.GetUtcNow().Date;
         var result = Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
-            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
+            Date = DateOnly.FromDateTime(dateTime.AddDays(index)),
             TemperatureC = Random.Shared.Next(-20, 55),
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         }).ToArray();

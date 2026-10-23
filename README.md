@@ -67,3 +67,29 @@ dotnet add src/AppHost reference src/WebApi
 dotnet new sln --name Glasgow
 dotnet sln add src/AppHost
 ```
+
+## CLI
+
+```powershell
+dotnet new console --framework net10.0 --use-program-main --output src/Cli --name Glasgow.Cli
+dotnet add src/Cli package Microsoft.Extensions.Configuration.CommandLine
+```
+
+## OpenApi
+
+```powershell
+dotnet tool install --global Microsoft.OpenApi.Kiota
+kiota generate --language CSharp --openapi http://localhost:5080/openapi/v1.json --output src/Cli --namespace-name Glasgow.Cli
+```
+
+Run the CLI while the WebApi is available at `http://localhost:5080`:
+
+```powershell
+dotnet run --project src/Cli
+```
+
+To use a different WebApi URL, pass the `--base-url` option:
+
+```powershell
+dotnet run --project src/Cli -- --base-url http://localhost:5080
+```

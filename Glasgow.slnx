@@ -3,6 +3,9 @@
   <Folder Name="/src/Abstractions/">
     <Project Path="src/Abstractions/Glasgow.Abstractions.csproj" />
   </Folder>
+  <Folder Name="/src/Cli/">
+    <Project Path="src/Cli/Glasgow.Cli.csproj" />
+  </Folder>
   <Folder Name="/src/AppHost/">
     <Project Path="src/AppHost/Glasgow.AppHost.csproj" />
   </Folder>

@@ -25,11 +25,16 @@ public sealed class Program
         app.UseHealthChecks("/healthz");
 
         app.MapOpenApi();
-        app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "Glasgow API v1"));
+        app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.yaml", "Glasgow API v1"));
+
+        app.UseBlazorFrameworkFiles();
+        app.UseStaticFiles();
 
         app.UseAuthorization();
 
         app.MapControllers();
+
+        app.MapFallbackToFile("index.html");
 
         await app.RunAsync();
 
