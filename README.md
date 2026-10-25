@@ -93,3 +93,27 @@ To use a different WebApi URL, pass the `--base-url` option:
 ```powershell
 dotnet run --project src/Cli -- --base-url http://localhost:5080
 ```
+
+## Tests
+
+### Unit Tests
+
+```powershell
+dotnet new mstest --framework net10.0 --output tests/Services.UnitTests --name Glasgow.Services.UnitTests
+dotnet add tests/Services.UnitTests reference src/Services
+dotnet add tests/Services.UnitTests package Shouldly
+dotnet sln add tests/Services.UnitTests
+```
+
+### Functional Tests
+
+```powershell
+dotnet new mstest --framework net10.0 --output tests/Services.FunctionalTests --name Glasgow.Services.FunctionalTests
+dotnet add tests/Services.FunctionalTests reference src/Services
+dotnet add tests/Services.FunctionalTests package Microsoft.Orleans.TestingHost
+dotnet add tests/Services.FunctionalTests package Shouldly
+dotnet sln add tests/Services.FunctionalTests
+```
+
+- Microsoft.Orleans.TestingHost
+- Aspire.Hosting.Testing

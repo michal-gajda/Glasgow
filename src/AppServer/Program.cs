@@ -1,7 +1,9 @@
 namespace Glasgow.AppServer;
 
 using Orleans.Dashboard;
+using System.Diagnostics.CodeAnalysis;
 
+[ExcludeFromCodeCoverage]
 public sealed class Program
 {
     private Program()
@@ -17,6 +19,8 @@ public sealed class Program
             siloBuilder.AddActivityPropagation();
             siloBuilder.AddDashboard();
             siloBuilder.AddMemoryGrainStorageAsDefault();
+            siloBuilder.AddMemoryGrainStorage("PubSubStore");
+            siloBuilder.AddMemoryStreams("Events");
             siloBuilder.UseInMemoryReminderService();
             siloBuilder.UseLocalhostClustering();
         });

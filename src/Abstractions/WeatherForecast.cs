@@ -1,6 +1,7 @@
 ﻿namespace Glasgow;
 
 [GenerateSerializer]
+[Alias("Glasgow.WeatherForecast")]
 public sealed record class WeatherForecast
 {
     [Id(0)] public required DateOnly Date { get; init; }

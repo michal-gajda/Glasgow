@@ -2,7 +2,9 @@ namespace Glasgow.WebUI;
 
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using System.Diagnostics.CodeAnalysis;
 
+[ExcludeFromCodeCoverage]
 public sealed class Program
 {
     private Program()

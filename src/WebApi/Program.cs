@@ -1,5 +1,8 @@
 namespace Glasgow.WebApi;
 
+using System.Diagnostics.CodeAnalysis;
+
+[ExcludeFromCodeCoverage]
 public sealed class Program
 {
     private Program()
@@ -13,6 +16,7 @@ public sealed class Program
         builder.Host.UseOrleansClient(client =>
         {
             client.AddActivityPropagation();
+            client.AddMemoryStreams("Events");
             client.UseLocalhostClustering();
         });
 

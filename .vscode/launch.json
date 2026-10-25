@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Glasgow Aspire (AppHost)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build Glasgow.AppHost",
+      "program": "${workspaceFolder}/src/AppHost/bin/Debug/net10.0/Glasgow.AppHost.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/AppHost",
+      "stopAtEntry": false,
+      "console": "integratedTerminal",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOTNET_ENVIRONMENT": "Development",
+        "ASPIRE_ALLOW_UNSECURED_TRANSPORT": "true",
+        "ASPIRE_DASHBOARD_OTLP_ENDPOINT_URL": "http://localhost:19110",
+        "ASPIRE_RESOURCE_SERVICE_ENDPOINT_URL": "http://localhost:20273"
+      }
+    }
+  ]
+}

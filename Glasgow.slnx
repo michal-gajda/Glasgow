@@ -21,4 +21,11 @@
   <Folder Name="/src/WebUI/">
     <Project Path="src/WebUI/Glasgow.WebUI.csproj" />
   </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/Services.FunctionalTests/">
+    <Project Path="tests/Services.FunctionalTests/Glasgow.Services.FunctionalTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Services.UnitTests/">
+    <Project Path="tests/Services.UnitTests/Glasgow.Services.UnitTests.csproj" />
+  </Folder>
 </Solution>

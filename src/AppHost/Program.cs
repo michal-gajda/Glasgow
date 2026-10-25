@@ -1,5 +1,8 @@
 namespace Glasgow.AppHost;
 
+using System.Diagnostics.CodeAnalysis;
+
+[ExcludeFromCodeCoverage]
 public sealed class Program
 {
     private Program()
